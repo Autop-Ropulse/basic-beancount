@@ -1,0 +1,14 @@
+from beancount.ingest.importers.csv import Col
+from beancount.ingest.importers.csv import Importer as CSVImporter
+
+
+WELLS_FARGO_IMPORTER = CSVImporter(
+    {Col.DATE: 0, Col.AMOUNT: 1, Col.NARRATION: 4},
+    "Liabilities:WellsFargoCreditCard",  # account
+    "USD",  # currency
+)
+
+
+CONFIG = [
+    WELLS_FARGO_IMPORTER,
+]

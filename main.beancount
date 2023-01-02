@@ -1,0 +1,5 @@
+2023-01-01 custom "fava-option" "import-config" "main.import"
+2023-01-01 custom "fava-option" "import-dirs" "import"
+
+option "title" "My Personal Ledger"
+option "operating_currency" "USD"
