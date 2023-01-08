@@ -1,6 +1,6 @@
 from beancount.ingest.importers.csv import Col
 from beancount.ingest.importers.csv import Importer as CSVImporter
-from smart_importer import apply_hooks, PredictPostings
+from smart_importer import apply_hooks, PredictPostings, DuplicateDetector
 
 WELLS_FARGO_IMPORTER = CSVImporter(
     {Col.DATE: 0, Col.AMOUNT: 1, Col.NARRATION: 4},
@@ -16,6 +16,6 @@ WELLS_FARGO_CHECKING_IMPORTER = CSVImporter(
 )
 
 CONFIG = [
-    apply_hooks(WELLS_FARGO_IMPORTER, [PredictPostings()]),
-    apply_hooks(WELLS_FARGO_CHECKING_IMPORTER, [PredictPostings()]),
+    apply_hooks(WELLS_FARGO_IMPORTER, [PredictPostings(), DuplicateDetector()]),
+    apply_hooks(WELLS_FARGO_CHECKING_IMPORTER, [PredictPostings(), DuplicateDetector()]),
 ]
