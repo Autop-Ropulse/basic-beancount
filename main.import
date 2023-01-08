@@ -9,6 +9,13 @@ WELLS_FARGO_IMPORTER = CSVImporter(
 )
 
 
+WELLS_FARGO_CHECKING_IMPORTER = CSVImporter(
+    {Col.DATE: 0, Col.AMOUNT: 1, Col.NARRATION: 4},
+    "Assets:WFCHecking",  # account
+    "USD",  # currency
+)
+
 CONFIG = [
     apply_hooks(WELLS_FARGO_IMPORTER, [PredictPostings()]),
+    apply_hooks(WELLS_FARGO_CHECKING_IMPORTER, [PredictPostings()]),
 ]
