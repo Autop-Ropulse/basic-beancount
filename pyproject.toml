@@ -8,6 +8,7 @@ authors = ["Your Name <you@example.com>"]
 python = "^3.10"
 beancount = "^2.3.5"
 fava = "^1.23.1"
+smart-importer = "^0.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
